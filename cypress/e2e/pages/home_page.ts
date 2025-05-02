@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import {TestDataStore} from "../../Data/data_store";
+import {TestDataStore} from "../../data/data_store";
 
 export class Home_page {
 

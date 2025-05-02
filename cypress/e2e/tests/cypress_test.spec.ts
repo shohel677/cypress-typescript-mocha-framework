@@ -1,5 +1,5 @@
 import { Home_page } from '../pages/home_page';
-import {TestDataStore} from "../../Data/data_store";
+import {TestDataStore} from "../../data/data_store";
 
 describe ('Cypress TypeScript Mocha', () => {
     const homepage = new Home_page();
