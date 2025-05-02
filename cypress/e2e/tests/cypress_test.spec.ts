@@ -16,4 +16,13 @@ describe ('Cypress TypeScript Mocha', () => {
         });
     })
 
+    it('Input value', () => {
+        cy.fixture('input_value').then((inputValue) => {
+            TestDataStore.loadFixtureData(inputValue);
+            homepage.inputValueInSuggestiveField()
+
+        })
+        }
+    )
+
 })
