@@ -12,17 +12,29 @@ describe ('Cypress TypeScript Mocha', () => {
         cy.fixture('radio_case').then((radio_case) => {
             TestDataStore.loadFixtureData(radio_case);
 
-            homepage.clickRadioButton()
+            homepage.clickRadioButton();
         });
-    })
+    });
 
     it('Input value', () => {
         cy.fixture('input_value').then((inputValue) => {
             TestDataStore.loadFixtureData(inputValue);
-            homepage.inputValueInSuggestiveField()
+            homepage.inputValueInSuggestiveField();
 
+        });
+    });
+    it('Select dropdown', () => {
+        cy.fixture('select_dropdown').then((select_dropdown) => {
+            TestDataStore.loadFixtureData(select_dropdown);
+            homepage.selectDropdownOption();
+
+        });
+    });
+    it('Check checkbox', () => {
+        cy.fixture('checkbox_case').then((checkbox_case) => {
+            TestDataStore.loadFixtureData(checkbox_case);
+            homepage.checkCheckboxOption()
         })
-        }
-    )
+    })
 
 })
