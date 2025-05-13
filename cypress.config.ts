@@ -4,7 +4,11 @@ export default defineConfig({
     e2e: {
         baseUrl: "https://rahulshettyacademy.com/AutomationPractice",
         specPattern: "cypress/e2e/tests/**/*.ts",
-        supportFile: "cypress/support/e2e.ts"
+        supportFile: "cypress/support/e2e.ts",
+        experimentalSourceRewriting: true,
+        setupNodeEvents(on, config) {
+            // optional: custom node events
+        },
     },
     reporter: "mochawesome",
     reporterOptions: {

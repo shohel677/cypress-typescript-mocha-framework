@@ -1,0 +1,186 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 4,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-05-10T16:49:26.035Z",
+    "end": "2025-05-10T16:49:29.810Z",
+    "duration": 3775,
+    "testsRegistered": 5,
+    "passPercent": 80,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fed39932-d61e-4a5f-986e-07f7983a2034",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tests\\api_tests.ts",
+      "file": "cypress\\e2e\\tests\\api_tests.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d061d8d8-da2a-4cf4-ae34-77d436df81fe",
+          "title": "API Test Suite - JSONPlaceholder",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "GET - Should fetch all posts",
+              "fullTitle": "API Test Suite - JSONPlaceholder GET - Should fetch all posts",
+              "timedOut": null,
+              "duration": 692,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "apiPage.getPosts().then((response) => {\n    expect(response.status).to.eq(200);\n    expect(response.body).to.be.an('array');\n    expect(response.body.length).to.be.greaterThan(0);\n});",
+              "err": {},
+              "uuid": "632b6599-9353-4764-a1f4-6e927d9819c6",
+              "parentUUID": "d061d8d8-da2a-4cf4-ae34-77d436df81fe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "POST - Should create a new post using JSON file",
+              "fullTitle": "API Test Suite - JSONPlaceholder POST - Should create a new post using JSON file",
+              "timedOut": null,
+              "duration": 747,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('postData.json').then((data) => {\n    cy.request('POST', 'https://jsonplaceholder.typicode.com/posts', data).then((response) => {\n        expect(response.status).to.eq(201);\n        expect(response.body).to.have.property('id');\n        expect(response.body.title).to.eq(data.title);\n        createdPostId = response.body.id;\n    });\n});",
+              "err": {},
+              "uuid": "f0a0173b-36d8-43b1-9474-790606cdf617",
+              "parentUUID": "d061d8d8-da2a-4cf4-ae34-77d436df81fe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "PUT - Should update the post using JSON file",
+              "fullTitle": "API Test Suite - JSONPlaceholder PUT - Should update the post using JSON file",
+              "timedOut": null,
+              "duration": 1127,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('updatedPostData.json').then((data) => {\n    cy.request('PUT', `https://jsonplaceholder.typicode.com/posts/${createdPostId}`, data).then((response) => {\n        expect(response.status).to.eq(200);\n        expect(response.body.title).to.eq(data.title);\n    });\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://jsonplaceholder.typicode.com/posts/101\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://jsonplaceholder.typicode.com/posts/101\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.17.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 70\n}\nBody: {\"title\":\"Updated Title\",\"body\":\"Updated body of the post\",\"userId\":1}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Sat, 10 May 2025 16:49:27 GMT\",\n  \"content-type\": \"text/html; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"server\": \"cloudflare\",\n  \"report-to\": \"{\\\"group\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"endpoints\\\":[{\\\"url\\\":\\\"https://nel.heroku.com/reports?ts=1746895767&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=9iMY%2BdNyYB08rXsZlr5VJb7XTsXuKXYjpdlxdZtft%2FY%3D\\\"}]}\",\n  \"reporting-endpoints\": \"heroku-nel=https://nel.heroku.com/reports?ts=1746895767&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=9iMY%2BdNyYB08rXsZlr5VJb7XTsXuKXYjpdlxdZtft%2FY%3D\",\n  \"nel\": \"{\\\"report_to\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"success_fraction\\\":0.005,\\\"failure_fraction\\\":0.05,\\\"response_headers\\\":[\\\"Via\\\"]}\",\n  \"x-powered-by\": \"Express\",\n  \"x-ratelimit-limit\": \"1000\",\n  \"x-ratelimit-remaining\": \"998\",\n  \"x-ratelimit-reset\": \"1746895781\",\n  \"vary\": \"Origin, Accept-Encoding\",\n  \"access-control-allow-credentials\": \"true\",\n  \"cache-control\": \"no-cache\",\n  \"pragma\": \"no-cache\",\n  \"expires\": \"-1\",\n  \"via\": \"1.1 vegur\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"cf-ray\": \"93daee11aca2fde0-SIN\",\n  \"alt-svc\": \"h3=\\\":443\\\"; ma=86400\"\n}\nBody: TypeError: Cannot read properties of undefined (reading 'id')\n    at update (/app/node_modules/json-server/lib/server/router/plural.js:262:24)\n    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)\n    at next (/app/node_modules/express/lib/router/route.js:137:13)\n    at next (/app/node_modules/express/lib/router/route.js:131:14)\n    at Route.dispatch (/app/node_modules/express/lib/router/route.js:112:3)\n    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)\n    at /app/node_modules/express/lib/router/index.js:281:22\n    at param (/app/node_modules/express/lib/router/index.js:354:14)\n    at param (/app/node_modules/express/lib/router/index.js:365:14)\n    at Function.process_params (/app/node_modules/express/lib/router/index.js:410:3)\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://jsonplaceholder.typicode.com/posts/101\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://jsonplaceholder.typicode.com/posts/101\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/13.17.0 Chrome/118.0.5993.159 Electron/27.3.10 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 70\n}\nBody: {\"title\":\"Updated Title\",\"body\":\"Updated body of the post\",\"userId\":1}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Sat, 10 May 2025 16:49:27 GMT\",\n  \"content-type\": \"text/html; charset=utf-8\",\n  \"transfer-encoding\": \"chunked\",\n  \"connection\": \"keep-alive\",\n  \"server\": \"cloudflare\",\n  \"report-to\": \"{\\\"group\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"endpoints\\\":[{\\\"url\\\":\\\"https://nel.heroku.com/reports?ts=1746895767&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=9iMY%2BdNyYB08rXsZlr5VJb7XTsXuKXYjpdlxdZtft%2FY%3D\\\"}]}\",\n  \"reporting-endpoints\": \"heroku-nel=https://nel.heroku.com/reports?ts=1746895767&sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&s=9iMY%2BdNyYB08rXsZlr5VJb7XTsXuKXYjpdlxdZtft%2FY%3D\",\n  \"nel\": \"{\\\"report_to\\\":\\\"heroku-nel\\\",\\\"max_age\\\":3600,\\\"success_fraction\\\":0.005,\\\"failure_fraction\\\":0.05,\\\"response_headers\\\":[\\\"Via\\\"]}\",\n  \"x-powered-by\": \"Express\",\n  \"x-ratelimit-limit\": \"1000\",\n  \"x-ratelimit-remaining\": \"998\",\n  \"x-ratelimit-reset\": \"1746895781\",\n  \"vary\": \"Origin, Accept-Encoding\",\n  \"access-control-allow-credentials\": \"true\",\n  \"cache-control\": \"no-cache\",\n  \"pragma\": \"no-cache\",\n  \"expires\": \"-1\",\n  \"via\": \"1.1 vegur\",\n  \"cf-cache-status\": \"DYNAMIC\",\n  \"cf-ray\": \"93daee11aca2fde0-SIN\",\n  \"alt-svc\": \"h3=\\\":443\\\"; ma=86400\"\n}\nBody: TypeError: Cannot read properties of undefined (reading 'id')\n    at update (/app/node_modules/json-server/lib/server/router/plural.js:262:24)\n    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)\n    at next (/app/node_modules/express/lib/router/route.js:137:13)\n    at next (/app/node_modules/express/lib/router/route.js:131:14)\n    at Route.dispatch (/app/node_modules/express/lib/router/route.js:112:3)\n    at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)\n    at <unknown> (/app/node_modules/express/lib/router/index.js:281:22)\n    at param (/app/node_modules/express/lib/router/index.js:354:14)\n    at param (/app/node_modules/express/lib/router/index.js:365:14)\n    at Function.process_params (/app/node_modules/express/lib/router/index.js:410:3)\n\n    at <unknown> (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:132876:72)\n    at tryCatcher (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1830:23)\n    at Promise._settlePromiseFromHandler (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1542:31)\n    at Promise._settlePromise (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1599:18)\n    at Promise._settlePromise0 (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1644:10)\n    at Promise._settlePromises (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:1724:18)\n    at _drainQueueStep (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:2430:12)\n    at _drainQueue (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:2423:9)\n    at Async._drainQueues (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:2439:5)\n    at Async.drainQueues (https://rahulshettyacademy.com/__cypress/runner/cypress_runner.js:2309:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://cypress_typescript_mocha/./cypress/e2e/tests/api_tests.ts:26:0)",
+                "diff": null
+              },
+              "uuid": "a6f111ba-76ec-43fe-8b2e-f28d4770881a",
+              "parentUUID": "d061d8d8-da2a-4cf4-ae34-77d436df81fe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "PATCH - Should partially update the post using JSON file",
+              "fullTitle": "API Test Suite - JSONPlaceholder PATCH - Should partially update the post using JSON file",
+              "timedOut": null,
+              "duration": 322,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('updatedData.json').then((data) => {\n    cy.request('PATCH', `https://jsonplaceholder.typicode.com/posts/${createdPostId}`, data).then((response) => {\n        expect(response.status).to.eq(200);\n        expect(response.body.title).to.eq(data.title);\n    });\n});",
+              "err": {},
+              "uuid": "0aa86854-d1c5-48e9-ab38-35d331fa2451",
+              "parentUUID": "d061d8d8-da2a-4cf4-ae34-77d436df81fe",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "DELETE - Should delete the post",
+              "fullTitle": "API Test Suite - JSONPlaceholder DELETE - Should delete the post",
+              "timedOut": null,
+              "duration": 765,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request('DELETE', `https://jsonplaceholder.typicode.com/posts/${createdPostId}`).then((response) => {\n    expect(response.status).to.eq(200);\n});",
+              "err": {},
+              "uuid": "150895a2-16b9-40b2-9138-a23c2c43ce54",
+              "parentUUID": "d061d8d8-da2a-4cf4-ae34-77d436df81fe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "632b6599-9353-4764-a1f4-6e927d9819c6",
+            "f0a0173b-36d8-43b1-9474-790606cdf617",
+            "0aa86854-d1c5-48e9-ab38-35d331fa2451",
+            "150895a2-16b9-40b2-9138-a23c2c43ce54"
+          ],
+          "failures": [
+            "a6f111ba-76ec-43fe-8b2e-f28d4770881a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3653,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

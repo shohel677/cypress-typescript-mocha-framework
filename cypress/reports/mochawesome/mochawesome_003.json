@@ -1,0 +1,243 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 8,
+    "passes": 7,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-05-11T04:55:38.809Z",
+    "end": "2025-05-11T04:56:29.627Z",
+    "duration": 50818,
+    "testsRegistered": 8,
+    "passPercent": 87.5,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "4fe794b4-06d6-4500-b669-0a1c6c8b0df0",
+      "title": "",
+      "fullFile": "cypress\\e2e\\tests\\cypress_test.spec.ts",
+      "file": "cypress\\e2e\\tests\\cypress_test.spec.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "aeb07819-7152-43dc-9232-5941cb07f559",
+          "title": "Cypress TypeScript Mocha",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Click radio button",
+              "fullTitle": "Cypress TypeScript Mocha Click radio button",
+              "timedOut": null,
+              "duration": 8560,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('radio_case').then((radio_case) => {\n    data_store_1.TestDataStore.loadFixtureData(radio_case);\n    homepage.clickRadioButton();\n});",
+              "err": {},
+              "uuid": "ac296c3a-ad8e-42d9-9660-b7ba31d26b70",
+              "parentUUID": "aeb07819-7152-43dc-9232-5941cb07f559",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Input value",
+              "fullTitle": "Cypress TypeScript Mocha Input value",
+              "timedOut": null,
+              "duration": 3095,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('input_value').then((inputValue) => {\n    data_store_1.TestDataStore.loadFixtureData(inputValue);\n    homepage.inputValueInSuggestiveField();\n});",
+              "err": {},
+              "uuid": "6f6a81bc-f3a1-4211-9b5e-241644ea2942",
+              "parentUUID": "aeb07819-7152-43dc-9232-5941cb07f559",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Select dropdown",
+              "fullTitle": "Cypress TypeScript Mocha Select dropdown",
+              "timedOut": null,
+              "duration": 1746,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('select_dropdown').then((select_dropdown) => {\n    data_store_1.TestDataStore.loadFixtureData(select_dropdown);\n    homepage.selectDropdownOption();\n});",
+              "err": {},
+              "uuid": "5f8d5c2c-2b3a-44ac-8180-96bd972a625d",
+              "parentUUID": "aeb07819-7152-43dc-9232-5941cb07f559",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Check checkbox",
+              "fullTitle": "Cypress TypeScript Mocha Check checkbox",
+              "timedOut": null,
+              "duration": 1782,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('checkbox_case').then((checkbox_case) => {\n    data_store_1.TestDataStore.loadFixtureData(checkbox_case);\n    homepage.checkCheckboxOption();\n});",
+              "err": {},
+              "uuid": "2f4e635e-d774-4da6-955c-559b3836b5fd",
+              "parentUUID": "aeb07819-7152-43dc-9232-5941cb07f559",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Open window",
+              "fullTitle": "Cypress TypeScript Mocha Open window",
+              "timedOut": null,
+              "duration": 17749,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('window_case').then((window_case) => {\n    data_store_1.TestDataStore.loadFixtureData(window_case);\n    homepage.openWindow();\n    homepage.visit();\n    homepage.openTab();\n});",
+              "err": {},
+              "uuid": "9ae07b73-b050-4e7f-902f-d8d48428b26e",
+              "parentUUID": "aeb07819-7152-43dc-9232-5941cb07f559",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Handle Alert",
+              "fullTitle": "Cypress TypeScript Mocha Handle Alert",
+              "timedOut": null,
+              "duration": 3856,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('alert_case').then((alert_case) => {\n    data_store_1.TestDataStore.loadFixtureData(alert_case);\n    homepage.handleAlert();\n});",
+              "err": {},
+              "uuid": "8701abcc-4d1e-42d3-a2e7-d386fdde0734",
+              "parentUUID": "aeb07819-7152-43dc-9232-5941cb07f559",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Mouse hover",
+              "fullTitle": "Cypress TypeScript Mocha Mouse hover",
+              "timedOut": null,
+              "duration": 4759,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('mouse_hover_case').then((mouse_hover_case) => {\n    data_store_1.TestDataStore.loadFixtureData(mouse_hover_case);\n    homepage.mouseHoverFunc();\n});",
+              "err": {},
+              "uuid": "4db37399-a24c-44fc-a484-2fd3daaa5606",
+              "parentUUID": "aeb07819-7152-43dc-9232-5941cb07f559",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Frame handling",
+              "fullTitle": "Cypress TypeScript Mocha Frame handling",
+              "timedOut": null,
+              "duration": 867,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.getIframeBody('#courses-iframe')\n    .find('div.header-text > div > h2 > span')\n    .invoke('text')\n    .then((text) => {\n    cy.log(text);\n    const cleanedText = text.replace(/\\s+/g, ' ').trim();\n    expect(cleanedText).to.include('An Academy to Learn Earn & Shine  in your QA Career');\n});",
+              "err": {
+                "message": "AssertionError: expected 'An Academy to Learn Earn & Shine in your QA Career' to include 'An Academy to Learn Earn & Shine  in your QA Career'",
+                "estack": "AssertionError: expected 'An Academy to Learn Earn & Shine in your QA Career' to include 'An Academy to Learn Earn & Shine  in your QA Career'\n    at Context.eval (webpack://cypress_typescript_mocha/./cypress/e2e/tests/cypress_test.spec.ts:65:0)",
+                "diff": null
+              },
+              "uuid": "13126cff-3f95-46a6-b85e-d170541a983c",
+              "parentUUID": "aeb07819-7152-43dc-9232-5941cb07f559",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ac296c3a-ad8e-42d9-9660-b7ba31d26b70",
+            "6f6a81bc-f3a1-4211-9b5e-241644ea2942",
+            "5f8d5c2c-2b3a-44ac-8180-96bd972a625d",
+            "2f4e635e-d774-4da6-955c-559b3836b5fd",
+            "9ae07b73-b050-4e7f-902f-d8d48428b26e",
+            "8701abcc-4d1e-42d3-a2e7-d386fdde0734",
+            "4db37399-a24c-44fc-a484-2fd3daaa5606"
+          ],
+          "failures": [
+            "13126cff-3f95-46a6-b85e-d170541a983c"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 42414,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mochawesome",
+        "overwrite": false,
+        "html": true,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
